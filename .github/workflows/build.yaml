@@ -1,0 +1,47 @@
+
+name: Build Slide and Deploy
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup
+        run: |
+            make setup
+
+      - name: Marp Build 
+        uses: docker://marpteam/marp-cli:v3.4.0
+        with:
+            args: build/slide.md --config-file .marprc.yml --output build/index.html
+        env:
+            MARP_USER: root:root
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: build
+        
+
+
+  deploy:
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
