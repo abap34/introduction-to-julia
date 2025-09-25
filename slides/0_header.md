@@ -7,10 +7,13 @@ theme: honwaka
 
 <!-- _class: lead -->
 
-# Slide Template
-## For Marp Users
+# Julia 言語・コンパイラ入門
 
-@name
-2023/12/31
+
+![bg left:56% 50%](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/julia/julia-original.svg)
+
+Yuchi Yamaguchi
+渡部研 夏ゼミ 2025/09/30
 
 ---
+
