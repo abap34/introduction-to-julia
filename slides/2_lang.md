@@ -34,20 +34,6 @@ theme: honwaka
 
 ---
 
-<!-- _header: Julia のキホンと特徴 -->
-
-
-Julia は、
-
-1. 動的型付けの
-2. JIT コンパイルで動作する
-3. ハイパフォーマンスな
-
-プログラミング言語です。
-
-
----
-
 
 <!-- _header: Julia のキホンと特徴 -->
 
@@ -58,9 +44,9 @@ Julia は、
 
 <span style="color: black; font-weight: bold; font-size: 2.1em;">1.  動的型付けの</span>
 
-2. JIT コンパイルで動作する
+1. JIT コンパイルで動作する
 
-3. ハイパフォーマンスな
+2. ハイパフォーマンスな
 
 プログラミング言語です。
 
@@ -297,7 +283,6 @@ Julia の謳い文句:
 ✅ Nominal Subtyping
 ✅ Parametric Types あるよ
 ✅ 基本的には Invariant (例外あり)
-✅ Union型 あるよ
 
 ```julia
 struct Hoge{T <: Number} <: AbstractHoge
@@ -315,31 +300,6 @@ end
 </div>
 
 ![bg right:40% 90%](img/image-2.png)
-
----
-
-<!-- _header: Types in Julia -->
-
-### 重要な区別:
-## **Concrete Type** と **Abstract Type**
-
-
----
-
-<!-- _header: Types in Julia -->
-
-![bg right:38% 100%](img/image-2.png)
-
-**Concrete Type**
-
-- インスタンスを生成できる型
-- 例えば `Int`, `Float64`, `Hoge`, `Array{Int, 1}` など
-- `Union{}` 以外の supertype にならない
-
-**Abstract Type**
-
-- インスタンスを生成できない型
-- 例えば `Number`, `Real`, `AbstractHoge` など
 
 
 ---

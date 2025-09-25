@@ -44,11 +44,11 @@ style: |
 
 <br>
 
-1. **動的型付け**
-2. **パフォーマンスが良いプログラムがかける**
-3. **科学技術計算に強い**
+1. **動的・インタラクティブに使える**
+1. **パフォーマンスに優れたプログラムがかける**
+2. **科学技術計算に強い**
 
-な特徴を持つプログラミング言語．
+プログラミング言語．
 
 
 
@@ -115,41 +115,6 @@ https://github.com/abap34?tab=repositories&q=&type=&language=julia
 
 ![bg right 100%](img/image-1.png)
 
-<!-- --- -->
-
-
-<!-- <span style="font-size: 0.8em;">
-
-<br>
-
-
-- 数値計算向け言語としては少なくともしばらくは滅びはしないだろう
-  - 今まで Fortran, MATLAB, C++ とかがシェアを取ってきた領域でシェアをとりつつある
-  - アカデミアの人から人気がある
-    - 毎年やっている survey $^{[1]}$ によれば research に使っている人が一貫して一番多い 😯
-  - そういう意味で、 <span class="red">いま 真にライバルなのは Fortran </span>  (そしてこの勝負は分がいい)
-- 期待されていた機械学習ではどう？
-  - 世間の人のよくある Julia のイメージはたぶん <span class="red"> Alternative to Python </span>
-  - が、機械学習プレイヤーとしては <span class="red">**素直に Python 使ったほうが楽**</span> というのが正直なところ
-    - エコシステムが強すぎる
-- ところでとても好きだし面白い言語だと思う
-  - 少なくとも python の静的型チェッカくらいの体験は提供できるように頑張っていきたい
-
-</span>
-
-
-
-<br>
-
-<div class="cite">
-
-[1] https://julialang.org/assets/2025-julia-user-developer-survey.pdf
-
-</div>
-
-
-<span class="red">TODO: 公開時に消す</span>
- -->
 
 ---
 
@@ -235,7 +200,7 @@ https://github.com/abap34?tab=repositories&q=&type=&language=julia
 
 **❌ Julia 入門**
 
-# ✅ Julia <span class="dot-text">言語・コンパイラ</span>入門
+## ✅ Julia 言語・コンパイラ入門
 <br>
 
 <span style="font-size: 0.8em;">
@@ -243,7 +208,6 @@ https://github.com/abap34?tab=repositories&q=&type=&language=julia
 
 ※ 前提としてプログラミング言語・言語処理系の基本的な知識があることを想定しています
 ※ 聞いても Julia が書けるようにはなりません
-※ Julia コンパイラは書けるようになるかもしれません
 ※ プログラミング言語を研究している人・コンパイラを作っている人にとって面白い話をします
 
 
@@ -301,12 +265,13 @@ https://github.com/abap34?tab=repositories&q=&type=&language=julia
 ---
 
 
-<span class="red" style="font-weight: normal; font-size: 0.5em;">
+<span class="red" style="font-weight: normal; font-size: 0.6em;">
 
 
 
 
-免責: なるべく正確になるように頑張っていますが， Julia コンパイラ全体にわたって正確に全てを把握しているわけではないので誤りがあるかもしれません．
+免責: なるべく正確になるように頑張っていますが， 
+Julia コンパイラ全体にわたって正確に全てを把握しているわけではないので誤りがあるかもしれません．
 
 また，研究室内のラフなゼミでの発表資料なので，雑なアイデアが含まれるものもあります．
 正確性が低い可能性があるもの，雑アイデアが含まれる場合にはページの見出しに ⚠️ マークをつけているのでそのつもりで読んでください．
