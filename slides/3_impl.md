@@ -131,32 +131,18 @@ int expanded,  const char **toplevel_filename, int *toplevel_lineno)
 <!-- _header: Julia の 実行プロセス -->
 
 **⚠️ 注意**
-トップレベル実行 / 簡単なヒューリスティックでコンパイル不要と判断された場合は
-基本的に AST を直接実行しているだけなので今回はあまり触れず，
-コンパイルされる場合にフォーカスします
+トップレベル実行 / 簡単なヒューリスティックでコンパイル不要と判断された場合には今回はあまり触れず，コンパイルされる場合にフォーカスします
 
-<span class="gray">
+<span class="gray" style="font-size: 0.8em;">
 
 
-(小噺:
-一方でこのことはトップレベルでの実行を abstract interpret することの
+(一方でこのことはトップレベルでの実行を abstract interpret することの
 難しさにつながっていてとても大変 😢)
 
 
 </span>
 
 
----
-
-
-<!-- _header: Julia のコンパイルプロセス -->
-
-**📝 Julia の IR とその変化をみながら Julia のコンパイルプロセスを追っていきます**
-
-- `Expr`
-- `CodeInfo`
-- `IRCode`
-- LLVM IR
 
 
 ---
@@ -184,9 +170,19 @@ int expanded,  const char **toplevel_filename, int *toplevel_lineno)
 
 <div>
 
-**基本的にコンパイラ内部で**
-**使われている AST のデータ構造:** <span style="font-size: 1.4em;">`Expr`</span>
-... といっても単に `head` と `args` があるだけのよくあるやつ
+**基本的にコンパイルプロセスで**
+**使われている AST のデータ構造:**
+
+<span style="font-size: 1.4em;">`Expr(head::Symbol, args...)`</span>
+
+
+
+<span style="font-size: 0.8em;">
+
+※ パーサ内部ではもう少しリッチな位置の表現などが可能な別のデータ構造を使っている
+
+
+</span>
 
 
 </div>
@@ -312,9 +308,7 @@ end
 </div>
 
 
-✅ マクロや `for` などが解体されて直列の命令列になっている
-
-
+✅ マクロや `for` が解体されて `goto` を使った直列の命令列になっている
 
 </div>
 
@@ -425,7 +419,8 @@ nothing
 
 <div>
 
-このあと `CodeInfo` から型推論・各種最適化が行われる．
+このあと `CodeInfo` から型推論・各種最適化プロセスが始まる
+
 
 <span style="font-size: 0.8em;">※ 型推論自体についてはこの後詳しく扱います．</span>
 
@@ -572,7 +567,15 @@ optimize した結果
 
 <!-- _header: Julia の型推論 -->
 
-✅ Julia の型推論は **データフロー解析** として解かれる．
+✅ Julia の型推論は **抽象解釈** ベースのもの
+
+<span style="font-size: 0.8em;">
+
+(なので HM 型推論のようなものとはだいぶ違う)
+
+</span>
+
+
 
 ⚠️ ただし 使っている lattice は Runtime で使う型の lattice と一致しているわけではなく，
 事実上ごく簡単な定数畳み込みに当たる処理も行う lattice も含めて複数の単純な lattice から構成される
@@ -593,8 +596,8 @@ optimize した結果
 
 使う lattice は
 
-- `JLTypeLattice` ... Runtime で使う型の lattice
-- `ConstLattice`　 ... 定数情報の lattice
+- `JLTypeLattice` ... Runtime で使う型の lattice (Julia の型は subtype 関係で lattice をなす)
+- `ConstLattice`　 ... 定数情報の lattice ($\bot \leq c \leq \top$)
 - `PartialsLattice` ... Struct のフィールドの型情報を扱う lattice
 - `ConditionalsLattice` ... 条件分岐の情報を扱う lattice
 

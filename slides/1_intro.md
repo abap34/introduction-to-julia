@@ -225,10 +225,10 @@ https://github.com/abap34?tab=repositories&q=&type=&language=julia
 
 1. Julia のキホンと特徴
 
-## [1] Julia 言語入門
+~~## [1] Julia 言語入門~~
 
-1. Julia の型と多重ディスパッチ
-2. Julia のメタプログラミング
+~~1. Julia の型と多重ディスパッチ~~
+~~2. Julia のメタプログラミング~~
 
 </div>   <!-- columns 1 end-->
 
@@ -259,27 +259,6 @@ https://github.com/abap34?tab=repositories&q=&type=&language=julia
 
 キーワード: Julia, Two Language Problem, 多重ディスパッチ, 抽象解釈, メタプログラミング, JIT コンパイル, LLVM, SSA IR
 
-
 </span>
-
----
-
-
-<span class="red" style="font-weight: normal; font-size: 0.6em;">
-
-
-
-
-免責: なるべく正確になるように頑張っていますが， 
-Julia コンパイラ全体にわたって正確に全てを把握しているわけではないので誤りがあるかもしれません．
-
-また，研究室内のラフなゼミでの発表資料なので，雑なアイデアが含まれるものもあります．
-正確性が低い可能性があるもの，雑アイデアが含まれる場合にはページの見出しに ⚠️ マークをつけているのでそのつもりで読んでください．
-
-
-</span>
-
-
-
 
 ---
