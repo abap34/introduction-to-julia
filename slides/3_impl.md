@@ -571,10 +571,10 @@ optimize した結果
 
 <span style="font-size: 0.8em;">
 
-(なので HM 型推論のようなものとはだいぶ違う)
+
+(他にもさまざまな解析 (Effects の解析など) を共通の抽象解釈のインフラで行っている)
 
 </span>
-
 
 
 ⚠️ ただし 使っている lattice は Runtime で使う型の lattice と一致しているわけではなく，
